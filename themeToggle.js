@@ -1,16 +1,13 @@
+// apply theme before rendering
+const savedTheme = localStorage.getItem('theme') || 'light';
+document.documentElement.setAttribute('data-theme', savedTheme);
+
 document.addEventListener("DOMContentLoaded", function () {
     const themeToggle = document.getElementById('theme-toggle');
-    const currentTheme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', currentTheme);
 
-    // Set initial icon based on theme
-    if (currentTheme === 'dark') {
-        themeToggle.textContent = '🌜';
-    } else {
-        themeToggle.textContent = '🌞';
-    }
+    // set icon based on theme
+    themeToggle.textContent = savedTheme === 'dark' ? '🌜' : '🌞';
 
-    // Toggle Theme Function
     function toggleTheme() {
         let theme = document.documentElement.getAttribute('data-theme');
         if (theme === 'light') {
@@ -24,6 +21,5 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Event Listener
     themeToggle.addEventListener('click', toggleTheme);
 });

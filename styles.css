@@ -123,7 +123,7 @@ nav {
     background-color: var(--primary-color, blue);
     padding: 0;
     z-index: 1000;
-    transition: background-color 0.3s ease; /* allows smooth change for theme toggle */
+    transition: color 0.3s ease, border-color 0.3s ease; /* allows smooth change for theme toggle */
 }
 
 .theme-toggle {
