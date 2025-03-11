@@ -12,6 +12,7 @@
     --col-2-bg: #e3e1e3;
     --col-3-bg: #e8dce8;
     --textarea-bg: #ffffff;
+    --light-font: white;
 }
 
 [data-theme="dark"] {
@@ -27,6 +28,7 @@
     --col-2-bg: #3a3a3a;
     --col-3-bg: #634463;
     --textarea-bg: #ffffff;
+    --light-font: black;
 }
 
 body {
@@ -69,7 +71,7 @@ h1, h2, h3 {
     font-family: 'Tajawal', Verdana, sans-serif;
 }
 
-h3#form-header {
+h2#project-header, h3#form-header {
     text-align: center;
 }
 
@@ -419,6 +421,16 @@ table tr:not(:has(th)):hover {
     transition: background-color 0.3s ease;
 }
 
+#projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 5rem;
+    padding: 0rem 5rem 5rem 5rem;
+    justify-items: center;
+    margin: 0 auto;
+    /* background-color: red; */
+}
+
 footer {
     width: 100dvw;
     background-color: var(--primary-color, blue);
@@ -475,5 +487,9 @@ footer {
         height: 38dvh;
         padding: 1rem;
         z-index: 9999;
+    }
+
+    #projects-container {
+        grid-template-columns: repeat(1, 1fr);
     }
 }

@@ -1,0 +1,42 @@
+[
+    {
+        "title": "Blackjack",
+        "image": "media/images/blackjack.png",
+        "description": "Implementation of Monte Carlo policy evaluation, Temporal Difference policy evaluation, and Q-Learning for Blackjack.",
+        "link": "https://github.com/trishatong/blackjack",
+        "date": "2024",
+        "tags": "Python, AI, Reinforcement Learning"
+    },
+    {
+        "title": "Gym App",
+        "image": "media/images/gym-app.jpg",
+        "description": "A mobile app that allows the user to track and view data related to exercise routines, fitness goals, and diet.",
+        "link": "https://github.com/trishatong/FitnessTrackerApp",
+        "date": "2024",
+        "tags": "React Native, Mobile Development"
+    },
+    {
+        "title": "Tarot Card Fortune Teller",
+        "image": "media/images/tarot-card.png",
+        "description": "Worked as a developer in this team project simulating a tarot card fortune teller.",
+        "link": "https://cse110-sp23-group27.github.io/Fortune-Telling-Group-27/",
+        "date": "2023",
+        "tags": "JavaScript, CSS, HTML, Agile"
+    },
+    {
+        "title": "Huffman Coding",
+        "image": "media/images/huffman.png",
+        "description": "Project consisting of compressing/decompressing programs using Huffman Compression.",
+        "link": "https://en.wikipedia.org/wiki/Huffman_coding",
+        "date": "2022",
+        "tags": "C++"
+    },
+    {
+        "title": "Cipher",
+        "image": "media/images/cipher.jpg",
+        "description": "File encryption/decryption program using bit manipulation and XOR encoding.",
+        "link": "https://www.geeksforgeeks.org/xor-cipher/",
+        "date": "2022",
+        "tags": "C, Assembly, Security"
+    }
+]
