@@ -331,6 +331,24 @@ button:hover {
     background: #588fad;
 }
 
+#load-local, #load-remote {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    background: var(--form-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+#load-local:hover, #load-remote:hover {
+    background-color: #588fad;
+}
+
+
 @keyframes spin {
     from {
         transform: rotate(0deg);
@@ -450,7 +468,7 @@ footer {
         max-width: 80px;
     }
 
-    .search button {
+    .search button, #load-button {
         width: auto;
     }
 
