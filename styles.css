@@ -16,12 +16,12 @@
 }
 
 [data-theme="dark"] {
-    --primary-color: #2c3e50;      /* Darker blue-gray for headers and nav */
-    --secondary-color: #34495e;    /* Slightly lighter shade for accents */
-    --text-color: #ecf0f1;         /* Light text color for readability */
-    --background-color: #1c1c1c;   /* Very dark background */
+    --primary-color: #2c3e50;
+    --secondary-color: #34495e;    
+    --text-color: #ecf0f1;       
+    --background-color: #1c1c1c;   
     --mixed-color: color-mix(in srgb, black, plum);
-    --form-color: #4a4a4a;         /* Darker form background */
+    --form-color: #4a4a4a;     
     --form-color: #85a0c1;      
     --hover: color-mix(in srgb, var(--primary-color) 50%, black 50%);
     --col-1-bg: #3a3a3a;
@@ -161,38 +161,6 @@ nav ul li a:hover {
     background-color: #ffffff33;
 }
 
-/* scope */
-/* @scope (nav) {
-    background-color: var(--primary-color, blue);
-    padding: 0;
-    z-index: 1000;
-
-    ul {
-        display: flex;
-        gap: 1rem;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        justify-content: center;
-        align-items: center;
-    }
-
-    ul li a {
-        text-decoration: none;
-        color: white;
-        font-size: 1.2rem;
-        padding: 0.5rem 1rem;
-        border-radius: 15px;
-        transition: color 0.3s ease, background-color 0.3s ease;
-    }
-
-    ul li a:hover {
-        color: #f9f9f9;
-        transform: scale(1.1);
-        background-color: #ffffff33;
-    }
-} */
-
 form {
     display: grid;
     gap: 15px;
@@ -254,11 +222,6 @@ textarea:focus {
     box-shadow: 0 0 4px var(--form-color);
     transition: box-shadow 0.3s ease;
 }
-
-/* textarea#comments,
-textarea#comments:placeholder-shown {
-    background-color: var(--textarea-bg);
-} */
 
 button {
     padding: 10px;
@@ -365,31 +328,6 @@ button:hover {
     animation: spin 2s linear infinite;
 }
 
-/* nested */
-/* .home-image {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: auto;
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-
-    & img {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        object-fit: cover;
-        width: 50%;
-        border-radius: 8px;
-        transition: transform 0.3s ease-in-out;
-
-        &:hover {
-            transform: scale(1.05);
-        }
-    }
-} */
-
 .home-image img {
     display: block;
     margin-left: auto;
@@ -402,6 +340,13 @@ button:hover {
 
 .home-image img:hover {
     transform: scale(1.05);
+}
+
+#homepage-description {
+    max-width: 50%; 
+    margin: auto;
+    text-align: left;
+    padding: 20px;
 }
 
 .balloon img {
@@ -446,11 +391,11 @@ table tr:not(:has(th)):hover {
     padding: 0rem 5rem 5rem 5rem;
     justify-items: center;
     margin: 0 auto;
-    /* background-color: red; */
 }
 
 footer {
     width: 100dvw;
+    padding: 8px;
     background-color: var(--primary-color, blue);
     color: white;
 }

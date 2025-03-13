@@ -134,5 +134,5 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // initial
-    updateCharacterCount();
+    updateCharacterCount();    
 });
