@@ -325,7 +325,7 @@ button:hover {
     background-color: #588fad;
 }
 
-#about-me {
+.blog, #about-me{
     text-align: center;
     padding: 0 12dvw;
 }
@@ -371,6 +371,7 @@ button:hover {
     object-position: center;
     border-radius: 8px;
     display: block;
+    margin: auto;
 }
 
 table {
