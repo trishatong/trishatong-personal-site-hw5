@@ -34,93 +34,93 @@
         </nav>
     </header>
     <main>
-        <hgroup>
-            <h2>about me</h2>
-            <p>Hi, I'm Trisha Tong! I'm currently a senior at the <em>University of California, San Diego</em> 
-                majoring in <ins>Computer Science</ins> and minoring in <ins>Business</ins>. I have built a strong foundation 
-                in software engineering through my education and project experience. My background 
-                includes working with various programming languages, including Python, Java, and 
-                JavaScript, and key software engineering principles (i.e. Agile). I also have 
-                familiarity with environments and tools like Git and JUnit, and am continuing to learn 
-                more about APIs (i.e. using Postman) and networking. Through collaborative and individual projects, 
+        <hgroup id="about-me">
+            <h2>about me!</h2>
+            <p>Hi, I'm Trisha Tong! I'm a senior at the University of California, San Diego
+                majoring in Computer Science with a minor in Business. Through my education 
+                and project experience. I have built a strong foundation in software engineering. 
+                My background includes working with Python, Java, and JavaScript, as well as applying 
+                key software engineering principles like Agile development. I also have experience 
+                with tools such as Git, JUnit, and Figma. Outside of class, I've been expanding my 
+                knowledge in APIs, networks, and UI/UX design. Through collaborative and individual projects, 
                 I have honed my ability to work effectively in both team-based and independent settings. 
                 These experiences have helped me adapt to fast-environments and deliver quality software 
                 solutions. I'm eager to join a company that will help me fulfill my career ambition to integrate 
                 technology with human-focused solutions.</p>
         </hgroup>
-        <p id="spin-smile">&#128516</p>
         <noscript>your browser either does not support JavaScript or JavaScript is disabled!</noscript>
+        <br>
+        <div id="contact-form">
+            <h3 id="form-header">questions? comments? let me know! <span id="spin-smile">&#128516;</span></h3>
+            <form id="contact-form" action="https://script.google.com/macros/s/AKfycbww0P1CscnKp75IxUr0HnJLbY8iRyxYyxZAko3v1Fh7Qfv22QwLT-PHMyzdiFMAA2nANg/exec" method="POST">
+                <fieldset>
+                    <legend>contact info:</legend>
+        
+                    <label for="name">Name: </label>
+                    <input type="text" id="name" name="name" maxlength="64" pattern="[A-Za-z\s]+(?:\s+[A-Za-z]+)*" required autocomplete="name">
+                    <output class="info" id="name"></output>
+                    <output class="error" id="name-error"></output>
+                    <br><br>
+        
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" maxlength="254" required>
+                    <output class="info" id="email"></output>
+                    <output class="error" id="email-error"></output>
+                    <br><br>
+        
+                    <label for="location">where are you from? (optional)</label>
+                    <select name="locations" id="location">
+                        <option value="" disabled selected>select a location</option>
+                        <optgroup label="Southern CA">
+                            <option value="san-diego">San Diego</option>
+                            <option value="orange-county">Orange County</option>
+                            <option value="los-angeles">Los Angeles</option>
+                            <option value="other-socal">Other (SoCal)</option>
+                        </optgroup>
+                        <optgroup label="Northern CA">
+                            <option value="san-francisco">San Francisco</option>
+                            <option value="san-jose">San Jose</option>
+                            <option value="palo-alto">Palo Alto</option>
+                            <option value="mountain-view">Mountain View</option>
+                            <option value="other-norcal">Other (NorCal)</option>
+                        </optgroup>
+                        <optgroup label="Other (U.S.)">
+                            <option value="west">West</option>
+                            <option value="midwest">MidWest</option>
+                            <option value="southwest">SouthWest</option>
+                            <option value="southeast">SouthEast</option>
+                            <option value="northeast">NorthEast</option>
+                        </optgroup>
+                    </select>
+                    <output class="info" id="location"></output>
+                    <output class="error" id="location-error"></output>
+                    <br><br>
+        
+                    <label for="user-type">select which best applies to you: (optional)</label>
+                    <select name="user-types" id="user-type">
+                        <option value="" disabled selected>who are you?</option>
+                        <option value="recruiter">recruiter</option>
+                        <option value="student">student</option>
+                        <option value="other">other</option>
+                    </select>
+                    <output class="info" id="user-type"></output>
+                    <output class="error" id="user-type-error"></output>
+                    <br><br>
+        
+                    <label for="comments">comments: </label>
+                    <textarea id="comments" name="comments" rows="5" cols="50" maxlength="500" placeholder="Enter your comments here..."></textarea>
+                    <output class="info" id="comments-count">500 characters remaining</output>
+                    <output class="error" id="comments-error"></output>
+                    <br><br>
+        
+                    <input type="hidden" name="possible_bot" value="true">
+                    <input type="hidden" id="form-errors" name="form-errors">
+        
+                    <button type="submit">submit</button>
+                </fieldset>
+            </form>
+        </div><br>
     </main>
-    <div id="contact-form">
-        <h3 id="form-header">questions? comments? let me know! :D</h3>
-        <form id="contact-form" action="https://script.google.com/macros/s/AKfycbww0P1CscnKp75IxUr0HnJLbY8iRyxYyxZAko3v1Fh7Qfv22QwLT-PHMyzdiFMAA2nANg/exec" method="POST">
-            <fieldset>
-                <legend>contact info:</legend>
-       
-                <label for="name">Name: </label>
-                <input type="text" id="name" name="name" maxlength="64" pattern="[A-Za-z\s]+(?:\s+[A-Za-z]+)*" required autocomplete="name">
-                <output class="info" id="name"></output>
-                <output class="error" id="name-error"></output>
-                <br><br>
-       
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" maxlength="254" required>
-                <output class="info" id="email"></output>
-                <output class="error" id="email-error"></output>
-                <br><br>
-       
-                <label for="location">where are you from? (optional)</label>
-                <select name="locations" id="location">
-                    <option value="" disabled selected>select a location</option>
-                    <optgroup label="Southern CA">
-                        <option value="san-diego">San Diego</option>
-                        <option value="orange-county">Orange County</option>
-                        <option value="los-angeles">Los Angeles</option>
-                        <option value="other-socal">Other (SoCal)</option>
-                    </optgroup>
-                    <optgroup label="Northern CA">
-                        <option value="san-francisco">San Francisco</option>
-                        <option value="san-jose">San Jose</option>
-                        <option value="palo-alto">Palo Alto</option>
-                        <option value="mountain-view">Mountain View</option>
-                        <option value="other-norcal">Other (NorCal)</option>
-                    </optgroup>
-                    <optgroup label="Other (U.S.)">
-                        <option value="west">West</option>
-                        <option value="midwest">MidWest</option>
-                        <option value="southwest">SouthWest</option>
-                        <option value="southeast">SouthEast</option>
-                        <option value="northeast">NorthEast</option>
-                    </optgroup>
-                </select>
-                <output class="info" id="location"></output>
-                <output class="error" id="location-error"></output>
-                <br><br>
-       
-                <label for="user-type">select which best applies to you: (optional)</label>
-                <select name="user-types" id="user-type">
-                    <option value="" disabled selected>who are you?</option>
-                    <option value="recruiter">recruiter</option>
-                    <option value="student">student</option>
-                    <option value="other">other</option>
-                </select>
-                <output class="info" id="user-type"></output>
-                <output class="error" id="user-type-error"></output>
-                <br><br>
-       
-                <label for="comments">comments: </label>
-                <textarea id="comments" name="comments" rows="5" cols="50" maxlength="500" placeholder="Enter your comments here..."></textarea>
-                <output class="info" id="comments-count">500 characters remaining</output>
-                <output class="error" id="comments-error"></output>
-                <br><br>
-       
-                <input type="hidden" name="possible_bot" value="true">
-                <input type="hidden" id="form-errors" name="form-errors">
-       
-                <button type="submit">submit</button>
-            </fieldset>
-        </form>
-    </div><br>
     <script src="formValidation.js"></script>
     <script src="themeToggle.js"></script>
     <footer>

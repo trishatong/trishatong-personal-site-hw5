@@ -31,7 +31,7 @@
     --light-font: black;
 }
 
-body {
+html, body {
     max-width: 100vw;
     overflow-x: hidden;
     background-color: var(--background-color, white);
@@ -73,6 +73,11 @@ h1, h2, h3 {
 
 h2#project-header, h3#form-header {
     text-align: center;
+}
+
+h2.current-positions {
+    color: var(--form-color);
+    margin-bottom: 0;
 }
 
 h3.current-positions {
@@ -320,21 +325,20 @@ button:hover {
     background-color: #588fad;
 }
 
-
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+#about-me {
+    text-align: center;
+    padding: 0 12dvw;
 }
 
 #spin-smile {
-    display: inline-block;  
-    font-size: xx-large;
-    margin: 0;
-    animation: spin 2s linear infinite;
+    display: inline-block;
+    animation: float-smile 0.5s ease-in-out infinite;
+}
+
+@keyframes float-smile {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+    100% { transform: translateY(0); }
 }
 
 .home-image img {
@@ -407,6 +411,16 @@ footer {
     padding: 8px;
     background-color: var(--primary-color, blue);
     color: white;
+}
+
+footer a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.1s ease-in-out; 
+}
+
+footer a:hover {
+    color: var(--hover);
 }
 
 @media (max-width: 768px) {
