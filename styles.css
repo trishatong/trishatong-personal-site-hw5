@@ -75,6 +75,15 @@ h2#project-header, h3#form-header {
     text-align: center;
 }
 
+h3.current-positions {
+    padding: 10px 0px;
+    margin: 0;
+}
+
+summary.current-positions {
+    padding: 0 0 10px 30px;
+}
+
 #home-title {
     text-align: center;
 }
