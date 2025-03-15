@@ -32,8 +32,8 @@
                 </button>
               </li>
             </ul>
-            <form class="search" action="./search/">
-                <input type="text" name="q" placeholder="search...">
+            <form class="search" onsubmit="return globalSearch(event)">
+                <input type="text" id="search-input" placeholder="search...">
                 <button type="submit">search</button>
             </form>
         </nav>
@@ -50,6 +50,7 @@
     </main>
     <script src="themeToggle.js"></script>
     <script src="projectCard.js"></script>
+    <script src="search.js"></script>
     <footer>
         <p>© 2025 Trisha Tong</p>
     </footer>
