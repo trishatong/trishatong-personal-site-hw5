@@ -14,11 +14,11 @@ function globalSearch(event) {
         "case study": "blog.html",
         "about": "about.html",
         "contact": "about.html",
-        "blackjack": "blog.html",
-        "gym app": "blog.html",
-        "tarot card fortune teller": "blog.html",
-        "huffman coding": "blog.html",
-        "cipher": "blog.html",
+        "blackjack": "projects.html",
+        "gym app": "projects.html",
+        "tarot card fortune teller": "projects.html",
+        "huffman coding": "projects.html",
+        "cipher": "projects.html",
     };
 
     for (const keyword in searchMap) {
