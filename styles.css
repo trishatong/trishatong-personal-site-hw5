@@ -309,9 +309,14 @@ button:hover {
     background: #588fad;
 }
 
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
 #load-local, #load-remote {
-    display: block;
-    margin: 20px auto;
     padding: 10px 20px;
     font-size: 0.85rem;
     background: var(--form-color);
@@ -325,6 +330,7 @@ button:hover {
 #load-local:hover, #load-remote:hover {
     background-color: #588fad;
 }
+
 
 .blog, #about-me{
     text-align: center;
