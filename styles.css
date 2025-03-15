@@ -112,7 +112,7 @@ summary.current-positions {
     font-size: 1.2rem;
     cursor: pointer;
     position: absolute;
-    top: 15px;
+    top: 0.5em;
     left: 20px;
     background: none;
     border: none;
