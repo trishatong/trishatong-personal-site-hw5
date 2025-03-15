@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const defaultProjects = [
         {
             "title": "Blackjack",
-            "image": "media/images/blackjack.png",
+            "image": "media/images/projects/blackjack.png",
             "description": "Implementation of Monte Carlo policy evaluation, Temporal Difference policy evaluation, and Q-Learning for Blackjack.",
             "link": "https://github.com/trishatong/blackjack",
             "date": "2024",
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         },
         {
             "title": "Gym App",
-            "image": "media/images/gym-app.jpg",
+            "image": "media/images/projects/gym-app.jpg",
             "description": "A mobile app that allows the user to track and view data related to exercise routines, fitness goals, and diet.",
             "link": "https://github.com/trishatong/FitnessTrackerApp",
             "date": "2024",

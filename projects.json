@@ -1,7 +1,7 @@
 [
     {
         "title": "Blackjack",
-        "image": "media/images/blackjack.png",
+        "image": "media/images/projects/blackjack.png",
         "description": "Implementation of Monte Carlo policy evaluation, Temporal Difference policy evaluation, and Q-Learning for Blackjack.",
         "link": "https://github.com/trishatong/blackjack",
         "date": "2024",
@@ -9,7 +9,7 @@
     },
     {
         "title": "Gym App",
-        "image": "media/images/gym-app.jpg",
+        "image": "media/images/projects/gym-app.jpg",
         "description": "A mobile app that allows the user to track and view data related to exercise routines, fitness goals, and diet.",
         "link": "https://github.com/trishatong/FitnessTrackerApp",
         "date": "2024",
@@ -17,7 +17,7 @@
     },
     {
         "title": "Tarot Card Fortune Teller",
-        "image": "media/images/tarot-card.png",
+        "image": "media/images/projects/tarot-card.png",
         "description": "Worked as a developer in this team project simulating a tarot card fortune teller.",
         "link": "https://cse110-sp23-group27.github.io/Fortune-Telling-Group-27/",
         "date": "2023",
@@ -25,7 +25,7 @@
     },
     {
         "title": "Huffman Coding",
-        "image": "media/images/huffman.png",
+        "image": "media/images/projects/huffman.png",
         "description": "Project consisting of compressing/decompressing programs using Huffman Compression.",
         "link": "https://en.wikipedia.org/wiki/Huffman_coding",
         "date": "2022",
@@ -33,7 +33,7 @@
     },
     {
         "title": "Cipher",
-        "image": "media/images/cipher.jpg",
+        "image": "media/images/projects/cipher.jpg",
         "description": "File encryption/decryption program using bit manipulation and XOR encoding.",
         "link": "https://www.geeksforgeeks.org/xor-cipher/",
         "date": "2022",
