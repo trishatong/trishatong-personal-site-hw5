@@ -14,3 +14,21 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+function goToIndex() {
+    window.location.href = "index.html";
+}
+
+
+window.addEventListener("scroll", function () {
+    const backToTopBtn = document.getElementById("backToTop");
+    if (window.scrollY > 300) {
+        backToTopBtn.style.display = "block";
+    } else {
+        backToTopBtn.style.display = "none";
+    }
+});
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
