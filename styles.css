@@ -76,7 +76,7 @@ h1, h2, h3 {
     font-family: 'Tajawal', Verdana, sans-serif;
 }
 
-h2#project-header, h3#form-header {
+.project-header, h3#form-header {
     text-align: center;
 }
 
