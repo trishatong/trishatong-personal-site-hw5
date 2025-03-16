@@ -441,6 +441,10 @@ footer a:hover {
     color: var(--hover);
 }
 
+.crud {
+    text-align: center;
+}
+
 @media (max-width: 768px) {
     .search {
         order: 1;

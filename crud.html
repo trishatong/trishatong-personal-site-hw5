@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Projects - Trisha Tong</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="theme-toggle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- custom font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+        <label for="menu-toggle" class="hamburger">☰</label>
+        <nav>
+            <ul class="nav-links">
+              <li><a href="index.html">home</a></li>
+              <li><a href="projects.html">projects</a></li>
+              <li><a href="blog.html">case study</a></li>
+              <li><a href="about.html">about</a></li>
+              <li>
+                <button id="theme-toggle" aria-label="Toggle Dark/Light Mode" class="theme-toggle">
+                    🌞
+                </button>
+              </li>
+            </ul>
+            <form class="search" onsubmit="return globalSearch(event)">
+                <input type="text" id="search-input" placeholder="search...">
+                <button type="submit">search</button>
+            </form>
+        </nav>
+    </header>
+    <main>
+        <h2 class="crud">CRUD: Create a Project</h2>
+        <form>
+            <input type="hidden" id="edit-index">
+            <label>Title: <input type="text" id="title" required></label>
+            <label>Image URL: <input type="text" id="image"></label>
+            <label>Description: <textarea id="description"></textarea></label>
+            <label>Link: <input type="text" id="link"></label>
+            <label>Tags: <input type="text" id="tags"></label>
+            <button type="submit">Save Project</button>
+        </form>
+    </main>
+
+    <script src="projectCard.js"></script>
+    <script src="crud.js"></script>
+</body>
+</html>
