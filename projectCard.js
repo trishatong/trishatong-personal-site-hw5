@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             "image": "media/images/projects/gym-app.jpg",
             "description": "A mobile app that allows the user to track and view data related to exercise routines, fitness goals, and diet.",
             "link": "https://github.com/trishatong/FitnessTrackerApp",
-            "date": "2024",
+            "date": "2023",
             "tags": "React Native, Mobile Development"
         }
     ];
