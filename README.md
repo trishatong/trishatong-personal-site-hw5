@@ -1,1 +1,2 @@
 # trishatong-personal-site
+I reorganized my pages by centering content, adding more visuals to distinguish sections, and fixing spacing. I made some components more responsive to smaller sized screens and got rid of unwanted pages and files, like my "Experiments" tab to clean up my directory. I also linked a file (hardcoded as well) containing a UI/UX case study I worked on this quarter, made my search bar usable (for a handful of key words), and linked a Google Sheets to my form to house all the submitted data.
