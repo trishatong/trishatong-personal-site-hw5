@@ -1,5 +1,10 @@
+// document.addEventListener("DOMContentLoaded", async () => {
+//     const container = document.getElementById("projects-container");
+
 document.addEventListener("DOMContentLoaded", async () => {
-    const container = document.getElementById("projects-container");
+  const container = document.getElementById("projects-container");
+  const hasLocalButtons = document.getElementById("load-local") || document.getElementById("load-remote");
+  if (!container || !hasLocalButtons) return;
 
     // default
     const defaultProjects = [

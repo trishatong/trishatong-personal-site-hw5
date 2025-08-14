@@ -41,17 +41,94 @@
     <main>
         <section>
             <h2 class="project-header">some of my projects</h2>
-            <p class="project-header"><a href="crud.html">CRUD</a></p>
-            <div class="button-container">
+            <!-- <p class="project-header"><a href="crud.html">CRUD</a></p> -->
+            <!-- <div class="button-container">
                 <button id="load-local">Load Local</button>
                 <button id="load-remote">Load Remote</button>
-            </div>
+            </div> -->
+
             <div id="projects-container"></div>
         </section>
     </main>
     <script src="themeToggle.js"></script>
     <script src="projectCard.js"></script>
     <script src="search.js"></script>
+
+<!-- Firebase Firestore live data -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+  import { getFirestore, collection, query, orderBy, onSnapshot }
+    from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyD7LlpL5K7INLxJ0o_-9azoXNJPCwcgLK4",
+  authDomain: "personal-site-e4468.firebaseapp.com",
+  projectId: "personal-site-e4468",
+  storageBucket: "personal-site-e4468.firebasestorage.app",
+  messagingSenderId: "95913395306",
+  appId: "1:95913395306:web:7565165ff24e6786b9b613",
+  measurementId: "G-M8Y85P733T"
+};
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  const projectsRef = collection(db, "projects");
+  const q = query(projectsRef, orderBy("importance", "desc"));
+
+  function toDateString(dateField) {
+    if (!dateField) return "unknown";
+
+    try {
+      let date;
+      if (typeof dateField.toDate === "function") {
+        date = dateField.toDate(); // Firestore Timestamp
+      } else {
+        date = new Date(dateField); // String or number
+      }
+      return date.getFullYear(); // Just the year
+    } catch (err) {
+      console.error("Invalid date:", dateField, err);
+      return "unknown";
+    }
+  }
+
+  function esc(s) {
+    return String(s ?? "").replace(/[&<>"']/g, c => (
+      { "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#039;" }[c]
+    ));
+  }
+
+  function renderProjects(items) {
+  const container = document.getElementById("projects-container");
+  container.innerHTML = "";
+
+  items.forEach(p => {
+    const card = document.createElement("project-card");
+    card.setAttribute("title", p.title || "");
+    card.setAttribute("image", p.image || "");
+    card.setAttribute("description", p.description || "");
+    card.setAttribute("link", p.link || "");
+    card.setAttribute("date", toDateString(p.date));
+    card.setAttribute("tags", Array.isArray(p.tags) ? p.tags.join(", ") : "");
+    container.appendChild(card);
+  });
+
+  if (!items.length) {
+    container.innerHTML = "<p>No projects yet.</p>";
+  }
+}
+
+  onSnapshot(q, (snap) => {
+    const data = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+    renderProjects(data);
+  }, (err) => {
+    console.error(err);
+    document.getElementById("projects-container").textContent = "Error loading projects.";
+  });
+</script>
+
+
     <footer>
         <p>© 2025 Trisha Tong</p>
     </footer>
