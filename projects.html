@@ -41,12 +41,15 @@
     <main>
         <section>
             <h2 class="project-header">some of my projects</h2>
-            <!-- <p class="project-header"><a href="crud.html">CRUD</a></p> -->
-            <!-- <div class="button-container">
-                <button id="load-local">Load Local</button>
-                <button id="load-remote">Load Remote</button>
-            </div> -->
+            <!-- CHANGE 3: Add a Filter By Tag -->
+            <!-- highlight: add interactivity using data already in memory from Firestore -->
 
+            <!-- UI for tag filter: JS reads user input -->
+            <!-- <div id="tag-filter">
+              <input type="text" id="tagInput" placeholder="Enter tag (e.g., JavaScript)">
+              <button id="filterButton" >Filter</button>
+              <button id="clearFilterButton">Clear</button>
+            </div> -->
             <div id="projects-container"></div>
         </section>
     </main>
@@ -70,67 +73,102 @@ const firebaseConfig = {
   measurementId: "G-M8Y85P733T"
 };
 
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
+  const app = initializeApp(firebaseConfig); // connects website to exact Firebase project
+  const db = getFirestore(app); // returns Firestore database
 
   const projectsRef = collection(db, "projects");
-  const q = query(projectsRef, orderBy("importance", "desc"));
 
+  // --- CHANGE 1: Change Sorting Behavior ---
+  // highlight: data adjustment through changing backend query logic without touching underlying dataset
+  const q = query(projectsRef, orderBy("importance", "desc")); // backend query: sorts projects by importance
+
+  // returns year
   function toDateString(dateField) {
     if (!dateField) return "unknown";
 
     try {
       let date;
       if (typeof dateField.toDate === "function") {
-        date = dateField.toDate(); // Firestore Timestamp
+        date = dateField.toDate();
       } else {
-        date = new Date(dateField); // String or number
+        date = new Date(dateField); 
       }
-      return date.getFullYear(); // Just the year
+      return date.getFullYear();
     } catch (err) {
       console.error("Invalid date:", dateField, err);
       return "unknown";
     }
   }
 
+  // HTML escape utility to prevent HTML from breaking and protect against XSS
   function esc(s) {
     return String(s ?? "").replace(/[&<>"']/g, c => (
       { "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#039;" }[c]
     ));
   }
 
+  // --- CHANGE 2: Add a New Field (mode) to Display --- 
+  // highlight: add new field in Firestore -> update UI (FE + BE)
   function renderProjects(items) {
-  const container = document.getElementById("projects-container");
-  container.innerHTML = "";
+    const container = document.getElementById("projects-container");
+    container.innerHTML = ""; // clear old content
 
-  items.forEach(p => {
-    const card = document.createElement("project-card");
-    card.setAttribute("title", p.title || "");
-    card.setAttribute("image", p.image || "");
-    card.setAttribute("description", p.description || "");
-    card.setAttribute("link", p.link || "");
-    card.setAttribute("date", toDateString(p.date));
-    card.setAttribute("tags", Array.isArray(p.tags) ? p.tags.join(", ") : "");
-    container.appendChild(card);
-  });
+    // loop through each project from Firestore and create a custom <project-card> element
+    items.forEach(p => {
+      const card = document.createElement("project-card"); // create a new custom project card element
+      
+      card.setAttribute("title", p.title || ""); // set attribute for card so <project-card> component knows what to display
+      card.setAttribute("image", p.image || "");
+      card.setAttribute("description", p.description || "");
+      card.setAttribute("link", p.link || "");
+      card.setAttribute("date", toDateString(p.date));
+      card.setAttribute("tags", Array.isArray(p.tags) ? p.tags.join(", ") : "");
 
-  if (!items.length) {
-    container.innerHTML = "<p>No projects yet.</p>";
-  }
+      container.appendChild(card);
+    });
+
+    if (!items.length) {
+      container.innerHTML = "<p>No projects yet.</p>";
+    }
 }
 
-  onSnapshot(q, (snap) => {
-    const data = snap.docs.map(d => ({ id: d.id, ...d.data() }));
-    renderProjects(data);
-  }, (err) => {
-    console.error(err);
-    document.getElementById("projects-container").textContent = "Error loading projects.";
-  });
+let allProjects = []; // stores all projects when they first load to filter without refetching
+
+// realtime Firestore listener -> map docs to objects -> update UI
+onSnapshot(q, (snap) => {
+  const data = snap.docs.map(d => ({ id: d.id, ...d.data() })); // map Firestore docs to objects (only used in this function call)
+  renderProjects(data); // render projects immediately
+  
+  // allProjects = snap.docs.map(d => ({ id: d.id, ...d.data() })); // map Firestore docs to objects and store globally for filtering
+  // renderProjects(allProjects); // render filtered 
+
+}, (err) => {
+  console.error(err);
+  document.getElementById("projects-container").textContent = "Error loading projects.";
+});
+
+// document.getElementById("filterButton").addEventListener("click", () => { 
+//   const tag = document.getElementById("tagInput").value.trim().toLowerCase();   // remove extra spaces, make lowercase
+
+//   if (!tag) return renderProjects(allProjects); // if user didn’t type anything, skip filtering -> render all projects again
+
+//   const filtered = allProjects.filter(p =>
+//     Array.isArray(p.tags) && // checks p.tags is an array to prevent crashing
+//     p.tags.some(t => t.toLowerCase().includes(tag)) // check if any tag in that project contains search term
+//   );
+
+//   renderProjects(filtered); // render page with filtered results
+// });
+
+// document.getElementById("clearFilterButton").addEventListener("click", () => {
+//   document.getElementById("tagInput").value = ""; // empty input field
+//   renderProjects(allProjects); // re-render
+// });
+
 </script>
 
-
-    <footer>
-        <p>© 2025 Trisha Tong</p>
-    </footer>
+<footer>
+    <p>© 2025 Trisha Tong</p>
+</footer>
 </body>
 </html>

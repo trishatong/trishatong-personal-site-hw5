@@ -518,3 +518,13 @@ footer a:hover {
   object-fit: cover;
   border-radius: 8px;
 }
+
+#tag-filter {
+    padding: 0rem 5rem 3rem 5rem;
+    justify-items: center;
+    margin: 0 auto;
+}
+
+#tagInput {
+    margin-bottom: 5px;
+}
