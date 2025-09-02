@@ -50,6 +50,9 @@
               <button id="filterButton" >Filter</button>
               <button id="clearFilterButton">Clear</button>
             </div> -->
+
+            <input type="text" id="sortInput" placeholder="Enter sort input">
+            <button id="filterButton" >Sort</button>
             <div id="projects-container"></div>
         </section>
     </main>
@@ -78,9 +81,18 @@ const firebaseConfig = {
 
   const projectsRef = collection(db, "projects");
 
+  let input = "date";
+
+  document.getElementById("filterButton").addEventListener("click", () => {
+    input = document.getElementById("sortInput").value.trim().toLowerCase();
+    
+    refetch();
+  });
   // --- CHANGE 1: Change Sorting Behavior ---
   // highlight: data adjustment through changing backend query logic without touching underlying dataset
-  const q = query(projectsRef, orderBy("importance", "desc")); // backend query: sorts projects by importance
+  refetch();
+  function refetch() {
+  const q = query(projectsRef, orderBy(input, "asc")); // backend query: sorts projects by importance
 
   // returns year
   function toDateString(dateField) {
@@ -134,19 +146,20 @@ const firebaseConfig = {
 
 let allProjects = []; // stores all projects when they first load to filter without refetching
 
-// realtime Firestore listener -> map docs to objects -> update UI
-onSnapshot(q, (snap) => {
-  const data = snap.docs.map(d => ({ id: d.id, ...d.data() })); // map Firestore docs to objects (only used in this function call)
-  renderProjects(data); // render projects immediately
-  
-  // allProjects = snap.docs.map(d => ({ id: d.id, ...d.data() })); // map Firestore docs to objects and store globally for filtering
-  // renderProjects(allProjects); // render filtered 
 
-}, (err) => {
-  console.error(err);
-  document.getElementById("projects-container").textContent = "Error loading projects.";
-});
+  // realtime Firestore listener -> map docs to objects -> update UI
+  onSnapshot(q, (snap) => {
+    const data = snap.docs.map(d => ({ id: d.id, ...d.data() })); // map Firestore docs to objects (only used in this function call)
+    renderProjects(data); // render projects immediately
+    
+    // allProjects = snap.docs.map(d => ({ id: d.id, ...d.data() })); // map Firestore docs to objects and store globally for filtering
+    // renderProjects(allProjects); // render filtered 
 
+  }, (err) => {
+    console.error(err);
+    document.getElementById("projects-container").textContent = "Error loading projects.";
+  });
+  }
 // document.getElementById("filterButton").addEventListener("click", () => { 
 //   const tag = document.getElementById("tagInput").value.trim().toLowerCase();   // remove extra spaces, make lowercase
 
@@ -164,6 +177,7 @@ onSnapshot(q, (snap) => {
 //   document.getElementById("tagInput").value = ""; // empty input field
 //   renderProjects(allProjects); // re-render
 // });
+
 
 </script>
 
