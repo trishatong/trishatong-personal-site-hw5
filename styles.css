@@ -528,3 +528,14 @@ footer a:hover {
 #tagInput {
     margin-bottom: 5px;
 }
+
+.sort-controls {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+#sortInput {
+  width: 80%;
+  margin-right: 10px;
+}
