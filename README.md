@@ -1,5 +1,5 @@
 # trishatong-personal-site
-Hello! This is my personal website, where I...
+Hello! 😊 This is my personal website, where I...
 
 ●	Designed and developed this responsive personal website using HTML, CSS, and JavaScript to showcase my profile
 
