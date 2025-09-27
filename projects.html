@@ -62,21 +62,21 @@
     <script src="projectCard.js"></script>
     <script src="search.js"></script>
 
-<!-- Firebase Firestore live data -->
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
-  import { getFirestore, collection, query, orderBy, onSnapshot }
-    from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+  <!-- Firebase Firestore live data -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+    import { getFirestore, collection, query, orderBy, onSnapshot }
+      from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyD7LlpL5K7INLxJ0o_-9azoXNJPCwcgLK4",
-  authDomain: "personal-site-e4468.firebaseapp.com",
-  projectId: "personal-site-e4468",
-  storageBucket: "personal-site-e4468.firebasestorage.app",
-  messagingSenderId: "95913395306",
-  appId: "1:95913395306:web:7565165ff24e6786b9b613",
-  measurementId: "G-M8Y85P733T"
-};
+  const firebaseConfig = {
+    apiKey: "AIzaSyD7LlpL5K7INLxJ0o_-9azoXNJPCwcgLK4",
+    authDomain: "personal-site-e4468.firebaseapp.com",
+    projectId: "personal-site-e4468",
+    storageBucket: "personal-site-e4468.firebasestorage.app",
+    messagingSenderId: "95913395306",
+    appId: "1:95913395306:web:7565165ff24e6786b9b613",
+    measurementId: "G-M8Y85P733T"
+  };
 
   const app = initializeApp(firebaseConfig); // connects website to exact Firebase project
   const db = getFirestore(app); // returns Firestore database
@@ -146,8 +146,7 @@ const firebaseConfig = {
     }
 }
 
-let allProjects = []; // stores all projects when they first load to filter without refetching
-
+  let allProjects = []; // stores all projects when they first load to filter without refetching
 
   // realtime Firestore listener -> map docs to objects -> update UI
   onSnapshot(q, (snap) => {
@@ -181,10 +180,12 @@ let allProjects = []; // stores all projects when they first load to filter with
 // });
 
 
-</script>
+  </script>
 
-<footer>
+  <footer>
     <p>© 2025 Trisha Tong</p>
-</footer>
+    <a href="https://www.linkedin.com/in/trisha-tong-950a25230/">LinkedIn</a> | 
+    <a href="mailto:trishahtong@gmail.com">Email</a>
+  </footer>
 </body>
 </html>
